@@ -5,8 +5,12 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
+  function handle(){
+    console.log("clicked")
+  }
   return (
     <div className="pb-20 pt-36">
+      
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -38,13 +42,22 @@ const Hero = () => {
           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
          bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
+      <video
+  autoPlay
+  muted
+  loop
+  className="rotate-180 absolute top-[-350px] h-full w-full left-0 z-[1] object-cover mix-blend-screen contrast-125"
+  style={{ backgroundColor: 'transparent' }}
+>
+  <source src="/blackhole.webm" type="video/webm" />
+</video>
       </div>
 
       <div className="flex justify-center relative my-20 z-10">
+
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
-          </p>
+       
+         
 
           {/**
            *  Link: https://ui.aceternity.com/components/text-generate-effect
@@ -52,21 +65,31 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
+            words="Creating Unique Software with Endless Curiosity"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
-          </p>
+            Hi! I&apos;m Tanishq, a Full-Stack developer based in India          </p>
+          
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            <a href="https://drive.google.com/file/d/13HcHkhy1ZTs8MqOsTUhfwlKTutI2k1K4/view?usp=sharing">
+              <MagicButton
+                title="My resume"
+                icon={<FaLocationArrow />}
+                position="right"
+                handleClick={handle}
+              />
+            </a>
+            <a href="#about">
+              <MagicButton
+                title="Show My work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+          </div>
 
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
         </div>
       </div>
     </div>
